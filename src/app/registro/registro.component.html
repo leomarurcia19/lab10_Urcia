@@ -1,0 +1,31 @@
+<!-- Agrega la referencia al CSS de Bootstrap en el encabezado de tu documento -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+<div class="container d-flex justify-content-center align-items-center vh-100">
+  <div class="card">
+    <div class="card-body">
+      <h1 class="card-title text-center">Registro de Notas de Alumnos</h1>
+      <form #alumnoForm="ngForm" (ngSubmit)="onChangeInputAlumnos()" novalidate>
+        <div class="form-group">
+          <label for="nombre">Nombre:</label>
+          <input type="text" class="form-control" id="nombre" [(ngModel)]="newAlumno.nombre" name="nombre" required>
+        </div>
+        <div class="form-group">
+          <label for="dni">DNI:</label>
+          <input type="text" class="form-control" id="dni" [(ngModel)]="newAlumno.dni" name="dni" required>
+        </div>
+        <div class="form-group">
+          <label for="curso">Curso:</label>
+          <input type="text" class="form-control" id="curso" [(ngModel)]="newAlumno.curso" name="curso" required>
+        </div>
+        <div class="form-group">
+          <label for="nota">Nota:</label>
+          <input type="text" class="form-control" id="nota" [(ngModel)]="newAlumno.nota" name="nota" required>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary" [disabled]="alumnoForm.invalid">Subir Nota</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
